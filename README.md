@@ -32,26 +32,9 @@ TWILIO_AUTH_TOKEN=
 
 ## Usage
 ### GET Request
-Collect data from the ConnectWise Manage API using the query string parameters provided in the ConnectWise Manage API Documentation. This package will only passthrough keys that are provided by ConnectWise for Query String integrity.
-
-Accepted Query String Parameters can be found [here](https://developer.connectwise.com/Products/Manage/Developer_Guide#Query_String_Parameters).
-
-#### Example GET Request
-Here is an GET Request Example using the Facade
-
-```php
-use taylormaguire\CWManageAPI\CWManageAPI;
-
-CWManageAPI::get('company/companies', [
-    'pageSize' => 30,
-    'page' => 1,
-    'orderBy' => 'chargeToId asc',
-    'fields' => 'id,company/name,status'
-]);
+Carrier Lookup
 ```
+use codingfoundry\twilio;
 
-The example above will output a query string of
-
-```
-https://api-na.myconnectwise.net/company/companies?pageSize=30&page=1&orderBy=company/name%20%asc&fields=id,company/name,status
+Twilio::carrier_lookup('+16048546548');
 ```
