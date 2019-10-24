@@ -17,7 +17,8 @@ class Twilio {
 
     public function carrier_lookup($phone)
     {
-        $twilio = new Client($this->sid, $this->token);
+        $twilio = new Twilio();
+        $twilio = new Client($twilio->sid, $twilio->token);
 
         $phone_number = $twilio->lookups->v1->phoneNumbers($phone)
             ->fetch(array("type" => array("carrier")));
