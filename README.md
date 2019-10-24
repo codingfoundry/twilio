@@ -34,7 +34,7 @@ TWILIO_AUTH_TOKEN=
 ### GET Request
 Carrier Lookup
 ```
-use codingfoundry\twilio;
+use CodingFoundry\Twilio\Twilio;
 
-Twilio::carrier_lookup('+16048546548');
+Twilio::carrier_lookup('+16045554444');
 ```
