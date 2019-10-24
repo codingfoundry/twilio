@@ -1,0 +1,33 @@
+{
+    "name": "codingfoundry/twilio",
+    "description": "A package to interact between Laravel and the various Twilio API's",
+    "keywords": ["laravel", "presets", "laravel presets", "ui", "laravel ui"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "twilio/sdk": "^5.37"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodingFoundry\\Twilio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Taylor Maguire",
+            "email": "taylor@codingfoundry.com"
+        },
+        {
+            "name": "Garry Reimer",
+            "email": "garry@codingfoundry.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodingFoundry\\Twilio\\Twilio"
+            ]
+        }
+    }
+}
