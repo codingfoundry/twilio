@@ -26,8 +26,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CodingFoundry\\Twilio\\Twilio"
-            ]
+                "CodingFoundry\\Twilio\\TwilioServiceProvider"
+            ],
+            "aliases": {
+                "Twilio": "CodingFoundry\\Twilio\\TwilioFacade"
+            }
         }
     }
 }
