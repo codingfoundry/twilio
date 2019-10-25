@@ -19,6 +19,7 @@ class TwilioServiceProvider extends ServiceProvider
             'TWILIO_AUTH_TOKEN' => '',
             'TWILIO_PHONE_NUMBER' => '',
         ];
+
         foreach ($variables as $key => $value) {
             putenv("$key=$value");
         }
