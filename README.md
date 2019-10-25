@@ -14,9 +14,6 @@ This package is currently in development. Not suggested for production at this t
 Install the package through composer in your terminal.
 
 ```
-composer require twilio/sdk
-```
-```
 composer require codingfoundry/twilio
 ```
 
@@ -28,13 +25,29 @@ Each Environment Variable is REQUIRED for a successful connection.
 ```
 TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
+TWILIO_PHONE_NUMBER=
 ```
 
 ## Usage
-### GET Request
-Carrier Lookup
+### Carrier Lookup
+
+Twilio::carrier_lookup($number);
+
+Requires E.164 Number format. ie. +13334445555
+
 ```
 use CodingFoundry\Twilio\Twilio;
 
 Twilio::carrier_lookup('+16045554444');
+```
+
+### Send SMS
+
+Requires E.164 Number format. ie. +13334445555
+
+Twilio::send_sms($number, $body);
+```
+use CodingFoundry\Twilio\Twilio;
+
+Twilio::send_sms('+16045554444', 'This is my test sms text message!');
 ```
