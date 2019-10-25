@@ -43,9 +43,9 @@ Twilio::carrier_lookup('+16045554444');
 
 ### Send SMS
 
-Requires E.164 Number format. ie. +13334445555
-
 Twilio::send_sms($number, $body);
+
+Requires E.164 Number format. ie. +13334445555
 ```
 use CodingFoundry\Twilio\Twilio;
 
