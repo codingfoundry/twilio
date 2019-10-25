@@ -17,7 +17,7 @@ class Twilio {
         $this->phone = env('TWILIO_PHONE_NUMBER');
     }
 
-    public function carrier_lookup($number)
+    public static function carrier_lookup($number)
     {
         $twilio = new Twilio();
         $twilio = new Client($twilio->sid, $twilio->token);
@@ -28,18 +28,23 @@ class Twilio {
         return $phone_number->carrier;
     }
 
-    public function send_sms($number, $message)
+    public static function send_sms($number, $message)
     {
         $twilio = new Twilio();
-        $twilio = new Client($twilio->sid, $twilio->token);
+        $client = new Client($twilio->sid, $twilio->token);
 
-        $twilio->messages->create(
+        $client->messages->create(
             $number,
-            [
+            array(
                 'from' => $twilio->phone,
                 'body' => $message
-            ]
+            )
         );
+
+        return [
+            'from' => $twilio->phone,
+            'body' => $message
+        ];
     }
 
 }

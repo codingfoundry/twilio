@@ -14,6 +14,15 @@ class TwilioServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $variables = [
+            'TWILIO_ACCOUNT_SID' => '',
+            'TWILIO_AUTH_TOKEN' => '',
+            'TWILIO_PHONE_NUMBER' => '',
+        ];
+        foreach ($variables as $key => $value) {
+            putenv("$key=$value");
+        }
+
         $this->app->bind('Twilio', function() {
             return new Twilio();
         });
@@ -26,13 +35,6 @@ class TwilioServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $variables = [
-            'TWILIO_ACCOUNT_SID' => '',
-            'TWILIO_AUTH_TOKEN' => '',
-            'TWILIO_PHONE_NUMBER' => '',
-        ];
-        foreach ($variables as $key => $value) {
-            putenv("$key=$value");
-        }
+
     }
 }
