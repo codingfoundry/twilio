@@ -22,7 +22,7 @@ Add these details to your .env environment file with your own details as appropr
 
 Each Environment Variable is REQUIRED for a successful connection.
 
-```
+```php
 TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_NUMBER=
