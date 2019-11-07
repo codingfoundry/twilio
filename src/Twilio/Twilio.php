@@ -47,23 +47,22 @@ class Twilio {
         ];
     }
 
-    public static function send_voice($number, $message)
+    /*
+     * $url TwiML Bin URL
+     */
+    public static function send_voice($number, $url)
     {
         $twilio = new Twilio();
         $client = new Client($twilio->sid, $twilio->token);
 
-        $client->account->calls->create(
+        $client->calls->create(
             $number,
             $twilio->phone,
             array(
-                'url' => "http://demo.twilio.com/docs/voice.xml"
+                'url' => $url,
             )
         );
 
-        return [
-            'from' => $twilio->phone,
-            'url' => "http://demo.twilio.com/docs/voice.xml"
-        ];
+        return "voice sent";
     }
-
 }
