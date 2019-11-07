@@ -51,3 +51,14 @@ use CodingFoundry\Twilio\Twilio;
 
 Twilio::send_sms('+16045554444', 'This is my test sms text message!');
 ```
+
+### Send Voice Call
+
+Twilio::send_voice($number, $body);
+
+Requires E.164 Number format. ie. +13334445555
+```php
+use CodingFoundry\Twilio\Twilio;
+
+Twilio::send_voice('+16045554444', 'This is my test sms text message!');
+```
